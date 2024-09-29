@@ -1,0 +1,12 @@
+<h1>Your Personality Type</h1>
+<p>You are an {{ personality }}!</p>
+
+{% if personality == "introvert" %}
+  <p>As an introvert, you enjoy solitary activities and deep conversations.</p>
+{% elif personality == "extrovert" %}
+  <p>As an extrovert, you thrive in social settings and enjoy engaging with others.</p>
+{% elif personality == "creative" %}
+  <p>As a creative person, you enjoy artistic endeavors and thinking outside the box.</p>
+{% elif personality == "analytical" %}
+  <p>As an analytical person, you prefer logical reasoning and problem-solving.</p>
+{% endif %}

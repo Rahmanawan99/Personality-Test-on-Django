@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}">
+
+<div class="quiz-container">
+    <h1>Personality Quiz</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% for question in questions %}
+            <h3>{{ question.text }}</h3>
+            {% for answer in question.answer_set.all %}
+                <label>
+                    <input type="radio" name="q{{ question.id }}" value="{{ answer.personality_type }}">
+                    {{ answer.text }}
+                </label>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
