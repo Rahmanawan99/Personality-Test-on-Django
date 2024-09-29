@@ -9,7 +9,7 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     text = models.CharField(max_length=200)
-    personality_type = models.CharField(max_length=50)  # e.g., introvert, extrovert, etc.
+    personality_type = models.CharField(max_length=50)  
 
     def __str__(self):
         return self.text
